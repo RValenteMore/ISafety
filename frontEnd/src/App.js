@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
 import { Grid, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Mapa from "./Components/Mapa/Mapav2";
-import SonaeLogo from "./Assets/SonaeLogo/Sonae.png"
+import SonaeLogo from "./Assets/SonaeLogo/Sonae.png";
+import Grafico from "./Components/Grafico/Grafico";
+import Distrito from "./Components/Distrito/Distrito";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,17 +31,20 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 10,
     marginRight: 10,
 
-    paddingTop: theme.spacing(21.80),
-    paddingBottom: theme.spacing(22),
-    paddingRight: theme.spacing(9),
-    paddingLeft: theme.spacing(9),
+    height: theme.spacing(114.25),
+
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(0),
+    paddingRight: theme.spacing(5),
+    paddingLeft: theme.spacing(5),
 
     textAlign: "center",
     backgroundColor: "#525252",
   },
   Paper2: {
-    paddingTop: theme.spacing(22.84),
-    paddingBottom: theme.spacing(22.85),
+    height: theme.spacing(41.75),
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
     paddingRight: theme.spacing(7),
     paddingLeft: theme.spacing(7),
 
@@ -50,9 +55,10 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 10,
     marginRight: 10,
   },
-  Paper3: {
-    paddingTop: theme.spacing(34.6),
-    paddingBottom: theme.spacing(34.6),
+  Grafico: {
+    height: theme.spacing(65.25),
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
     paddingRight: theme.spacing(7),
     paddingLeft: theme.spacing(7),
 
@@ -62,6 +68,14 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 10,
     marginLeft: 10,
     marginRight: 10,
+  },
+  mapaTitulo: {
+    marginTop: theme.spacing(0),
+    marginBottom: theme.spacing(15),
+    color: "white",
+  },
+  graficoTitulo: {
+    color: "white",
   },
 }));
 
@@ -73,10 +87,10 @@ function App() {
         <Grid item direction="column" xs={12} sm={6} md={2}>
           <Grid item xs={12}>
             <Paper className={classes.Paper}>
-            Dges
-            <br />
-            Mais algo
-            {/* <img src={SonaeLogo} alt="Logo da Sonae" /> */}
+              Dges
+              <br />
+              Mais algo
+              {/* <img src={SonaeLogo} alt="Logo da Sonae" /> */}
             </Paper>
           </Grid>
           <Grid item xs={12}>
@@ -108,21 +122,23 @@ function App() {
             </Paper>
           </Grid>
         </Grid>
+
         <Grid item direction="column" xs={12} sm={6} md={3}>
-            <Paper className={classes.Mapa}>
-              <Mapa />
-            </Paper>
+          <Paper className={classes.Mapa}>
+            <h1 className={classes.mapaTitulo}>Previsões de Acidentes</h1>
+            <Mapa />
+          </Paper>
         </Grid>
 
-        
-        <Grid item xs={12} sm={6} md={7}>
-            <Paper className={classes.Paper2}>
-            </Paper>
-            <Paper className={classes.Paper3}>
-            </Paper>
+        <Grid item xs={12} sm={12} md={7}>
+          <Paper className={classes.Paper2}>
+            <Distrito/>
+          </Paper>
+          <Paper className={classes.Grafico}>
+            <h1 className={classes.graficoTitulo}>Últimos Acidentes</h1>
+            <Grafico />
+          </Paper>
         </Grid>
-
-        
       </Grid>
     </div>
   );
