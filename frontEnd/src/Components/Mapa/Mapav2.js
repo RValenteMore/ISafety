@@ -12,7 +12,7 @@ export default function Mapa() {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
-      width="auto"
+      width="500"
       height="auto"
       viewBox="0 0 611.822 1172.609"
       enable-background="new 0 0 611.822 1172.609"
