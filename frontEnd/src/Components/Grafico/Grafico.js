@@ -57,7 +57,7 @@ const data = [
 
 export default function App() {
   return (
-    <ResponsiveContainer width="100%" aspect={3}>
+    <ResponsiveContainer height="50%" width="100%" aspect={3}>
       <LineChart
         width={500}
         height={300}

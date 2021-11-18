@@ -35,8 +35,8 @@ const useStyles = makeStyles((theme) => ({
 
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(0),
-    // paddingRight: theme.spacing(5),
-    // paddingLeft: theme.spacing(5),
+    paddingRight: theme.spacing(5),
+    paddingLeft: theme.spacing(5),
 
     textAlign: "center",
     backgroundColor: "#525252",
@@ -126,7 +126,7 @@ function App() {
         <Grid item direction="column" xs={12} sm={6} md={3}>
           <Paper className={classes.Mapa}>
             <h1 className={classes.mapaTitulo}>Previsões de Acidentes</h1>
-            <Mapa />
+            <Mapa/>
           </Paper>
         </Grid>
 
