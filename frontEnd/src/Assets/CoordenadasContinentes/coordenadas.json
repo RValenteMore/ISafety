@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "nome": "Bragança",
+    "latitude": 41.803947324226186,
+    "longitude": -6.787917939108926,
+    "risco": 0.4,
+    "disponibilidade": true
+  },
+  {
+    "id": 2,
+    "nome": "Braga",
+    "latitude": 41.54254006241847,
+    "longitude": -8.399893964951687,
+    "risco": 0.6,
+    "disponibilidade": true
+  },
+  {
+    "id": 3,
+    "nome": "Antas (Porto)",
+    "latitude": 41.164368651045784,
+    "longitude": -8.584121052070367,
+    "risco": 0.9,
+    "disponibilidade": true
+  },
+
+  {
+    "id": 4,
+    "nome": "Colombo (Lisboa)",
+    "latitude": 38.75739180627725,
+    "longitude": -9.189631998244915,
+    "risco": 0,
+    "disponibilidade": false
+  }
+]

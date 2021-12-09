@@ -4,7 +4,7 @@ function Distrito(props) {
     return (
         <div>
             <h1 style={style.titulo}>Distrito de Braga</h1>
-            <p>Mais treta</p>
+            <p>Mais Coisas</p>
         </div>
     )
 }

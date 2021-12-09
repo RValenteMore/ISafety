@@ -5,6 +5,7 @@ import Mapa from "./Components/Mapa/Mapa.js";
 import SonaeLogo from "./Assets/SonaeLogo/Sonae.png";
 import Grafico from "./Components/Grafico/Grafico";
 import Distrito from "./Components/Distrito/Distrito";
+import { ResponsiveContainer } from "recharts";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,8 +13,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "black",
   },
   Paper: {
-    paddingTop: theme.spacing(9),
-    paddingBottom: theme.spacing(8),
+    height: theme.spacing(20),
     paddingRight: theme.spacing(7),
     paddingLeft: theme.spacing(7),
 
@@ -31,18 +31,18 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 10,
     marginRight: 10,
 
-    height: theme.spacing(114.25),
+    height: theme.spacing(103),
 
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(0),
-    paddingRight: theme.spacing(5),
-    paddingLeft: theme.spacing(5),
+    // paddingTop: theme.spacing(2),
+    // paddingBottom: theme.spacing(0),
+    // paddingRight: theme.spacing(5),
+    // paddingLeft: theme.spacing(5),
 
     textAlign: "center",
     backgroundColor: "#525252",
   },
   Paper2: {
-    height: theme.spacing(41.75),
+    height: theme.spacing(37.25),
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
     paddingRight: theme.spacing(7),
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 10,
   },
   Grafico: {
-    height: theme.spacing(65.25),
+    height: theme.spacing(58.5),
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
     paddingRight: theme.spacing(7),
@@ -76,74 +76,71 @@ const useStyles = makeStyles((theme) => ({
   },
   graficoTitulo: {
     color: "white",
+    marginBottom: 50,
   },
 }));
 
 function App() {
   const classes = useStyles();
   return (
-    // <div>
-    //   <Grid container className={classes.root}>
-    //     <Grid item direction="column" xs={12} sm={6} md={2}>
-    //       <Grid item xs={12}>
-    //         <Paper className={classes.Paper}>
-    //           Dges
-    //           <br />
-    //           Mais algo
-    //           {/* <img src={SonaeLogo} alt="Logo da Sonae" /> */}
-    //         </Paper>
-    //       </Grid>
-    //       <Grid item xs={12}>
-    //         <Paper className={classes.Paper}>
-    //           Dges
-    //           <br />
-    //           Mais algo
-    //         </Paper>
-    //       </Grid>
-    //       <Grid item xs={12}>
-    //         <Paper className={classes.Paper}>
-    //           Dges
-    //           <br />
-    //           Mais algo
-    //         </Paper>
-    //       </Grid>
-    //       <Grid item xs={12}>
-    //         <Paper className={classes.Paper}>
-    //           Dges
-    //           <br />
-    //           Mais algo
-    //         </Paper>
-    //       </Grid>
-    //       <Grid item xs={12}>
-    //         <Paper className={classes.Paper}>
-    //           Dges
-    //           <br />
-    //           Mais algo
-    //         </Paper>
-    //       </Grid>
-    //     </Grid>
-
-    //     <Grid item direction="column" xs={12} sm={6} md={3}>
-    //       <Paper className={classes.Mapa}>
-    //         <h1 className={classes.mapaTitulo}>Previsões de Acidentes</h1>
-    //         <Mapa/>
-    //       </Paper>
-    //     </Grid>
-
-    //     <Grid item xs={12} sm={12} md={7}>
-    //       <Paper className={classes.Paper2}>
-    //         <Distrito/>
-    //       </Paper>
-    //       <Paper className={classes.Grafico}>
-    //         <h1 className={classes.graficoTitulo}>Últimos Acidentes</h1>
-    //         <Grafico />
-    //       </Paper>
-    //     </Grid>
-    //   </Grid>
-    // </div>
+    <div style={{backgroundColor: "black"}}>
+      <Grid container className={classes.root}>
+        <Grid item direction="column" xs={12} sm={6} md={2}>
+          <Grid item xs={12}>
+            <Paper className={classes.Paper} style={{background: "white"}}>
+              {/* <ResponsiveContainer> */}
+                <img src={SonaeLogo} alt="Logo da Sonae" style={{marginLeft: -35, marginTop: 50}}/>
+              {/* </ResponsiveContainer> */}
+            </Paper>
+          </Grid>
+          <Grid item xs={12}>
+            <Paper className={classes.Paper}>
+              Dges
+              <br />
+              Mais algo
+            </Paper>
+          </Grid>
+          <Grid item xs={12}>
+            <Paper className={classes.Paper}>
+              Dges
+              <br />
+              Mais algo
+            </Paper>
+          </Grid>
+          <Grid item xs={12}>
+            <Paper className={classes.Paper}>
+              Dges
+              <br />
+              Mais algo
+            </Paper>
+          </Grid>
+          <Grid item xs={12}>
+            <Paper className={classes.Paper}>
+              Dges
+              <br />
+              Mais algo
+            </Paper>
+          </Grid>
+        </Grid>
 
 
-    <Mapa/>
+        <Grid item direction="column" xs={12} sm={6} md={3}>
+          <Paper className={classes.Mapa}>
+            <Mapa/>
+          </Paper>
+        </Grid>        
+
+        <Grid item xs={12} sm={12} md={7}>
+          <Paper className={classes.Paper2}>
+            <Distrito/>
+          </Paper>
+          <Paper className={classes.Grafico}>
+            <h1 className={classes.graficoTitulo}>Últimos Acidentes</h1>
+            <Grafico />
+          </Paper>
+        </Grid>
+      </Grid>
+    </div>
   );
 }
 

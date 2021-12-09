@@ -57,7 +57,7 @@ const data = [
 
 export default function App() {
   return (
-    <ResponsiveContainer height="50%" width="100%" aspect={3}>
+    <ResponsiveContainer height="50%" width="100%" aspect={3} style = {{backgroud: "white"}}>
       <LineChart
         width={500}
         height={300}
@@ -71,9 +71,9 @@ export default function App() {
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
-        <YAxis />
+        <YAxis/>
         <Tooltip />
-        <Legend />
+        {/* <Legend/> */}
         <Line
           type="monotone"
           dataKey="pv"
