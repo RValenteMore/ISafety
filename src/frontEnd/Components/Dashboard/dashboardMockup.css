@@ -1,0 +1,67 @@
+.verticalNavBar{
+    background: rgb(80,130,175);
+    background: linear-gradient(180deg, rgba(80,130,175,1) 0%, rgba(51,86,117,1) 25%);
+    height: 1000px;
+}
+
+.rightContainer{
+    padding-left: 40px;
+    padding-right: 100px;
+    background-color: #f2f3f8;
+}
+
+.search{
+    height: 60px;
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.fundo{
+    background-color: #f2f3f8;
+    height: 1000px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.peixaria{
+    height: 200px;
+    width: 250px;
+    background-color: #5eb6a0;
+    border-radius: 10px;
+}
+
+.talho{
+    height: 200px;
+    width: 250px;
+    background-color: #f8d36d;
+    border-radius: 10px;
+}
+
+.frescos{
+    height: 200px;
+    width: 250px;
+    background-color: #d0d2d1;
+    border-radius: 10px;
+}
+
+.padariaPastelaria{
+    height: 200px;
+    width: 250px;
+    background-color: #335675;
+    border-radius: 10px;
+}
+
+.seccoes{
+    margin-top: 25px;
+    justify-content: space-between;
+}
+
+.textoCartoes{
+    color: #335675;
+    text-align: center;
+}
+
+.titulos {
+    color: #446480;
+}
