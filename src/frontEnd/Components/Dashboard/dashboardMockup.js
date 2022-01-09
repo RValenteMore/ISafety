@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import "./dashboardMockup.css";
-import Mapa from "../Mapa/Mapa";
+import { NavLink, Outlet } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   Root: {
@@ -41,37 +41,69 @@ function DashboardMockup() {
     <div>
       <Grid container className={classes.Root}>
         <Grid item direction="column" md={2} className="verticalNavBar">
-          <h1>Teste</h1>
+          <ul>
+            <li className="selecionado">
+              <NavLink
+                to="/"
+              >
+                Sonae - Todas
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="nSelecionado"
+                to="/continentes"
+              >
+                Sonae - Continente
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="nSelecionado"
+                to="/bomdia"
+              >
+                Sonae - Bom Dia
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="nSelecionado"
+                to="/entrepostos"
+              >
+                Sonae - Entrepostos
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="nSelecionado"
+                to="/historico"
+              >
+                Histórico
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="nSelecionado"
+                to="/definicoes"
+              >
+                Definições
+              </NavLink>
+            </li>
+          </ul>
         </Grid>
 
         {/**Container da Diteita */}
         <Grid item direction="row" md={10} className="rightContainer">
           
           
-          {/*Barra de Pesquisa*/}
+          {/*Barra do Topo*/}
           <Grid item md={12}>
-            <div className="search"></div>
+            <div className="topBar">
+              <input className="search"/>
+              <button className="searchBtn">
+                Pesquisar
+              </button>
+            </div>
           </Grid>
 
           
           {/**Conteúdo*/}
-          <Grid container>
-
-            {/**Mapa */}
-            <Grid item md={4}>
-              <Paper className={classes.Mapa}>
-                
-                <Mapa style={{marginTop: -60}}/>
-              </Paper>
-            </Grid>
-
-            <Grid item md={8}>
-              <Paper className={classes.TaxaIncidenciaGeral}>
-              </Paper>
-              <Paper className={classes.NivelRiscoGeral}>
-              </Paper>
-            </Grid>
-          </Grid>
+          <Outlet/>
 
           {/**Secções coloridas*/}
           <Grid container md={12} className="seccoes">
