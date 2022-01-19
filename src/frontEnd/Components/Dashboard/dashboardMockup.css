@@ -2,6 +2,7 @@
     background: rgb(80,130,175);
     background: linear-gradient(180deg, rgba(80,130,175,1) 0%, rgba(51,86,117,1) 25%);
     height: 1000px;
+    width: 317px;
 }
 
 .rightContainer{
@@ -75,25 +76,61 @@ li {
     padding: 10px;
     padding-left: 20px;
     margin-top: 5px;
+    margin-left: 0px;
+    height: 20px;
+    width: 370px;
 }
 
 .selecionado {
+    text-decoration: none;
+
     background-color: #f2f3f8;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     border-top-right-radius: -50px;    
     color: #42637f;
+
+    padding: 10px 190px 10px 20px;
 }
 
 .nSelecionado {
     color: #f2f3f8;
     font-size: 15px;
     text-decoration: none;
+    padding-left: 20px;
+}
+
+.selecionado::before {
+    margin-top: -40px;
+
+    position: absolute;
+    content: '';
+    height: 30px;
+    width: 30px;
+    background-color: rgba(0,0,0,0);
+    left: 287px;
+    bottom: 1;
+    border-bottom-right-radius: 13px;
+    box-shadow: 0 17px 0 #f2f3f8;
+}
+.selecionado::after {
+    margin-top: 31px;
+
+    position: absolute;
+    content: '';
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    left: 287px;
+    bottom: 1;
+    border-top-right-radius: 13px;
+    box-shadow: 0 -17px 0 #f2f3f8;
 }
 
 .search {
-    height: 30px;
+    height: 35px;
     width: 500px;
+    
     margin-top: 12px;
     margin-left: 15px;
     border-radius: 50px;
@@ -108,11 +145,31 @@ li {
 
 .searchBtn {
     background-color: #335675;
-    height: 30px;
+    height: 37px;
     margin-left: -65px;
     border-radius: 50px;
     border-style: none;
     color: white;
-    padding: 0px 10px;
+    padding: 0px 25px;
+}
+
+.isafety{
+    display: block;
+    margin: 40px auto -60px auto;
+
+}
+
+.PesquisarIcon{
+    height: 15px;
+    width: auto;
+}
+
+.filterBtn{
+    height: 37px;
+    width: 37px;
+    margin-left: 10px;
+    border-radius: 50px;
+    background-color: #f2f3f8;
+    border-style: none;
 }
 

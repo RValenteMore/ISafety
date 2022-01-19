@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 10,
     marginRight: 10,
 
-    height: theme.spacing(72.5),
+    height: 630,
   },
 
   TaxaIncidenciaGeral: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 10,
     marginBottom: 20,
 
-    height: theme.spacing(35),
+    height: 305,
   },
 
   NivelRiscoGeral: {
@@ -25,12 +25,11 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 10,
     marginLeft: 10,
 
-    height: theme.spacing(35),
+    height: 305,
   },
 }));
 
 function Todas() {
-
   const classes = useStyles();
   return (
     <div>

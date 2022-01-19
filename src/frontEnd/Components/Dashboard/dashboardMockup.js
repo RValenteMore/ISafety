@@ -1,84 +1,95 @@
 import React from "react";
-import { Grid, Paper } from "@material-ui/core";
+import { Divider, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import "./dashboardMockup.css";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate} from "react-router-dom";
+import ISafetyLogo from "../../Assets/ISafetyLogo/logo.png";
+import SearchIcon from "../../Assets/DashBoard/SearchIcon.png";
+import FilterIcon from "../../Assets/DashBoard/FilterIcon.png";
 
 const useStyles = makeStyles((theme) => ({
   Root: {
     flexGrow: 1,
-  },
-
-  Mapa: {
-    marginTop: 50,
-    marginBottom: 10,
-    marginRight: 10,
-
-    height: theme.spacing(72.5),
-  },
-
-  TaxaIncidenciaGeral: {
-    marginTop: 50,
-    marginLeft: 10,
-    marginBottom: 20,
-
-    height: theme.spacing(35),
-  },
-
-  NivelRiscoGeral: {
-    marginTop: 20,
-    marginBottom: 10,
-    marginLeft: 10,
-
-    height: theme.spacing(35),
-  },
-
+  }
 }));
 
 function DashboardMockup() {
+  const navigate = useNavigate();
   const classes = useStyles();
   return (
     <div>
       <Grid container className={classes.Root}>
-        <Grid item direction="column" md={2} className="verticalNavBar">
+        <Grid item direction="column" className="verticalNavBar">
+          <img className="isafety" src={ISafetyLogo} alt="Logo ISafety"/>
           <ul>
-            <li className="selecionado">
+            <li>
               <NavLink
+                className={({isActive}) => {
+                  if(isActive)
+                    return "selecionado"
+                  else
+                    return "nSelecionado"
+                }}
                 to="/"
               >
                 Sonae - Todas
               </NavLink>
             </li>
             <li>
-              <NavLink className="nSelecionado"
+              <NavLink className={({isActive}) => {
+                  if(isActive)
+                    return "selecionado"
+                  else
+                    return "nSelecionado"
+                }}
                 to="/continentes"
               >
                 Sonae - Continente
               </NavLink>
             </li>
             <li>
-              <NavLink className="nSelecionado"
+              <NavLink className={({isActive}) => {
+                  if(isActive)
+                    return "selecionado"
+                  else
+                    return "nSelecionado"
+                }}
                 to="/bomdia"
               >
                 Sonae - Bom Dia
               </NavLink>
             </li>
             <li>
-              <NavLink className="nSelecionado"
+              <NavLink className={({isActive}) => {
+                  if(isActive)
+                    return "selecionado"
+                  else
+                    return "nSelecionado"
+                }}
                 to="/entrepostos"
               >
                 Sonae - Entrepostos
               </NavLink>
             </li>
             <li>
-              <NavLink className="nSelecionado"
+              <NavLink className={({isActive}) => {
+                  if(isActive)
+                    return "selecionado"
+                  else
+                    return "nSelecionado"
+                }}
                 to="/historico"
               >
                 Histórico
               </NavLink>
             </li>
             <li>
-              <NavLink className="nSelecionado"
+              <NavLink className={({isActive}) => {
+                  if(isActive)
+                    return "selecionado"
+                  else
+                    return "nSelecionado"
+                }}
                 to="/definicoes"
               >
                 Definições
@@ -96,8 +107,15 @@ function DashboardMockup() {
             <div className="topBar">
               <input className="search"/>
               <button className="searchBtn">
-                Pesquisar
+                <img className="PesquisarIcon" src={SearchIcon} alt="Pesquisar"/>
               </button>
+              <button className="filterBtn">
+                <img className="PesquisarIcon" src={FilterIcon} alt="Filtro"/>
+              </button>
+              <Divider 
+                  orientation="vertical"
+                  style={{marginLeft: 1000, height: 35, marginTop: -35, width: 3}}
+              />
             </div>
           </Grid>
 

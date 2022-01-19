@@ -1,0 +1,22 @@
+.verticalNavBar{
+    background: rgb(80,130,175);
+    background: linear-gradient(180deg, rgba(80,130,175,1) 0%, rgba(51,86,117,1) 25%);
+    height: 1000px;
+}
+
+.conteudo{
+    background-color: #f2f3f8;
+    height: 1000px;
+    padding: 250px 200px 350px 200px;
+}
+
+.login {
+    background: white;
+    height: 300px;
+    padding: 10px 20px;
+}
+
+h2{
+    color: #335675;
+    margin-left: 1;
+}

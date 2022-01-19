@@ -7,6 +7,7 @@ import BomDia from "./frontEnd/Components/Dashboard/Outlets/bomdia"
 import Entrepostos from "./frontEnd/Components/Dashboard/Outlets/entrepostos"
 import Historico from "./frontEnd/Components/Dashboard/Outlets/historico"
 import Definicoes from "./frontEnd/Components/Dashboard/Outlets/definicoes"
+import Login from "./frontEnd/Components/Login/login";
 
 import Loja from "./frontEnd/Components/Loja/loja";
 import ExcelToJson from "./backEnd/components/ExcelToJSON";
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/antigo" element={<DashBoard />}/>
         <Route path="/loja/:id" element={<Loja />}/>
         <Route path="/ExelToJson" element={<ExcelToJson/>}/>
+        <Route path="/login" element={<Login/>}/>
       </Routes>
     </BrowserRouter>
   );

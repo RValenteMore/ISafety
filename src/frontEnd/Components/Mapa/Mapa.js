@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import L from "leaflet";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  Polygon
+} from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import { Link } from "react-router-dom";
 
@@ -12,6 +18,8 @@ import markerVerde from "../../Assets/Icons/Markers/markerVerde.png";
 import markerAmarelo from "../../Assets/Icons/Markers/markerAmarelo.png";
 import markerVermelho from "../../Assets/Icons/Markers/markerVermelho.png";
 import markerUnavailable from "../../Assets/Icons/Markers/markerUnavailable.png";
+
+
 
 function getIcon(risco, disponibilidade) {
   let marker;
@@ -40,16 +48,16 @@ function Mapa() {
   const [lojas, setLojas] = useState([]);
   useEffect(() => {
     api.get("loja").then((data) => {
-      setLojas(data.data);;
+      setLojas(data.data);
     });
   }, []);
 
   return (
     <MapContainer
       center={[39.6, -8]}
-      zoom={6}
+      zoom={7}
       scrollWheelZoom={true}
-      minZoom={6}
+      minZoom={7}
       doubleClickZoom={false}
       style={{ borderRadius: 5 }}
     >
@@ -67,16 +75,26 @@ function Mapa() {
       >
         {lojas.map((continente) => (
           <Marker
-            position={[parseFloat(continente.Lat.replace(",", ".")), parseFloat(continente.Long.replace(",", "."))]}
-            icon={getIcon(parseFloat(continente.Nivel_risco), continente.Disponivel)}
-            // icon={getIcon(parseFloat(continente.Nivel_risco.replace(",", ".")), continente.Disponivel)} // Este nao funciona porque a maioria nao tem o risco para fazer replace 
+            position={[
+              parseFloat(continente.Lat.replace(",", ".")),
+              parseFloat(continente.Long.replace(",", ".")),
+            ]}
+            icon={getIcon(
+              parseFloat(continente.Nivel_risco),
+              continente.Disponivel
+            )}
+            // icon={getIcon(parseFloat(continente.Nivel_risco.replace(",", ".")), continente.Disponivel)} // Este nao funciona porque a maioria nao tem o risco para fazer replace
             interactive={continente.Disponivel}
           >
             <Popup>
               <h3>{continente.Nome}</h3>
-              <p>Lat: {parseFloat(continente.Lat.replace(",", "."))}<br/>
-              Long: {parseFloat(continente.Long.replace(",", "."))}<br/>
-              Nivel de Risco: {continente.Nivel_risco}</p>
+              <p>
+                Lat: {parseFloat(continente.Lat.replace(",", "."))}
+                <br />
+                Long: {parseFloat(continente.Long.replace(",", "."))}
+                <br />
+                Nivel de Risco: {continente.Nivel_risco}
+              </p>
               <Link to={`/Loja/:${continente._id}`}>Ver Mais</Link>
             </Popup>
           </Marker>
