@@ -1,34 +1,37 @@
-import React from "react";
-import { Divider, Grid } from "@material-ui/core";
+import React, { useState } from "react";
+import { Button, Divider, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import "./dashboardMockup.css";
-import { NavLink, Outlet, useNavigate} from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import ISafetyLogo from "../../Assets/ISafetyLogo/logo.png";
 import SearchIcon from "../../Assets/DashBoard/SearchIcon.png";
 import FilterIcon from "../../Assets/DashBoard/FilterIcon.png";
+import NotificationIcon from "../../Assets/DashBoard/NotifcationIcon.png";
+import MailIcon from "../../Assets/DashBoard/MailIcon.png";
+import AccountIcon from "../../Assets/DashBoard/AccountIcon.png";
+import MailDot from "../../Assets/DashBoard/MailDot.png";
 
 const useStyles = makeStyles((theme) => ({
   Root: {
     flexGrow: 1,
-  }
+  },
 }));
 
 function DashboardMockup() {
+  const [mail, setMail] = useState(1);
   const navigate = useNavigate();
   const classes = useStyles();
   return (
     <div>
       <Grid container className={classes.Root}>
         <Grid item direction="column" className="verticalNavBar">
-          <img className="isafety" src={ISafetyLogo} alt="Logo ISafety"/>
+          <img className="isafety" src={ISafetyLogo} alt="Logo ISafety" />
           <ul>
             <li>
               <NavLink
-                className={({isActive}) => {
-                  if(isActive)
-                    return "selecionado"
-                  else
-                    return "nSelecionado"
+                className={({ isActive }) => {
+                  if (isActive) return "selecionado";
+                  else return "nSelecionado";
                 }}
                 to="/"
               >
@@ -36,11 +39,10 @@ function DashboardMockup() {
               </NavLink>
             </li>
             <li>
-              <NavLink className={({isActive}) => {
-                  if(isActive)
-                    return "selecionado"
-                  else
-                    return "nSelecionado"
+              <NavLink
+                className={({ isActive }) => {
+                  if (isActive) return "selecionado";
+                  else return "nSelecionado";
                 }}
                 to="/continentes"
               >
@@ -48,11 +50,10 @@ function DashboardMockup() {
               </NavLink>
             </li>
             <li>
-              <NavLink className={({isActive}) => {
-                  if(isActive)
-                    return "selecionado"
-                  else
-                    return "nSelecionado"
+              <NavLink
+                className={({ isActive }) => {
+                  if (isActive) return "selecionado";
+                  else return "nSelecionado";
                 }}
                 to="/bomdia"
               >
@@ -60,11 +61,10 @@ function DashboardMockup() {
               </NavLink>
             </li>
             <li>
-              <NavLink className={({isActive}) => {
-                  if(isActive)
-                    return "selecionado"
-                  else
-                    return "nSelecionado"
+              <NavLink
+                className={({ isActive }) => {
+                  if (isActive) return "selecionado";
+                  else return "nSelecionado";
                 }}
                 to="/entrepostos"
               >
@@ -72,11 +72,10 @@ function DashboardMockup() {
               </NavLink>
             </li>
             <li>
-              <NavLink className={({isActive}) => {
-                  if(isActive)
-                    return "selecionado"
-                  else
-                    return "nSelecionado"
+              <NavLink
+                className={({ isActive }) => {
+                  if (isActive) return "selecionado";
+                  else return "nSelecionado";
                 }}
                 to="/historico"
               >
@@ -84,11 +83,10 @@ function DashboardMockup() {
               </NavLink>
             </li>
             <li>
-              <NavLink className={({isActive}) => {
-                  if(isActive)
-                    return "selecionado"
-                  else
-                    return "nSelecionado"
+              <NavLink
+                className={({ isActive }) => {
+                  if (isActive) return "selecionado";
+                  else return "nSelecionado";
                 }}
                 to="/definicoes"
               >
@@ -100,52 +98,64 @@ function DashboardMockup() {
 
         {/**Container da Diteita */}
         <Grid item direction="row" md={10} className="rightContainer">
-          
-          
           {/*Barra do Topo*/}
-          <Grid item md={12}>
             <div className="topBar">
-              <input className="search"/>
-              <button className="searchBtn">
-                <img className="PesquisarIcon" src={SearchIcon} alt="Pesquisar"/>
-              </button>
-              <button className="filterBtn">
-                <img className="PesquisarIcon" src={FilterIcon} alt="Filtro"/>
-              </button>
-              <Divider 
+              <input className="search" />
+
+              <Button
+                color="success"
+                style={{ marginLeft: -64, borderRadius: 50, height: "53%"}}
+              >
+                <img
+                  className="PesquisarIcon"
+                  src={SearchIcon}
+                  alt="Pesquisar"
+                />
+              </Button>
+
+              <Button>
+                <img src={FilterIcon} alt="Filtro" />
+              </Button>
+
+              <div style={{backgroungColor: "green", display: "flex", alignItems: "center", flexDirection: "row", position: "absolute", right: "100pt"}}>
+                <Divider
                   orientation="vertical"
-                  style={{marginLeft: 1000, height: 35, marginTop: -35, width: 3}}
-              />
+                  style={{ height: 35, width: 3 }}
+                />
+
+                <Button>
+                  <img className="" src={NotificationIcon} alt="Notificacoes" />
+                </Button>
+
+                <Button
+                  onClick={() => {setMail(0)}}
+                >
+                  <img src={MailIcon} alt="Correio" />
+                  <img src={MailDot} style={{margin: "-20pt 0 0 -3pt", height: "6pt", opacity: mail}}/>
+                </Button>
+
+                <Divider
+                  orientation="vertical"
+                  style={{ height: 35, width: 3, marginRight: "50pt" }}
+                />
+
+                <Button
+                  style={{ height: "90%" }}
+                  onClick={() => {
+                    navigate("bomdia");
+                  }}
+                >
+                  <img
+                    src={AccountIcon}
+                    alt="Perfil"
+                    style={{ height: "35pt" }}
+                  />
+                </Button>
+              </div>
             </div>
-          </Grid>
 
-          
           {/**Conteúdo*/}
-          <Outlet/>
-
-          {/**Secções coloridas*/}
-          <Grid container md={12} className="seccoes">
-            <Grid item className="peixaria">
-              <h3 className="textoCartoes">Peixaria</h3>
-              <p className="textoCartoes">Nivel de risco nas últimas horas</p>
-            </Grid>
-            <Grid item className="talho">
-              <h3 className="textoCartoes">Peixaria</h3>
-              <p className="textoCartoes">Nivel de risco nas últimas horas</p>
-            </Grid>
-            <Grid item className="frescos">
-              <h3 className="textoCartoes">Peixaria</h3>
-              <p className="textoCartoes">Nivel de risco nas últimas horas</p>
-            </Grid>
-            <Grid item className="padariaPastelaria">
-              <h3 className="textoCartoes" style={{ color: "white" }}>
-                Peixaria
-              </h3>
-              <p className="textoCartoes" style={{ color: "white" }}>
-                Nivel de risco nas últimas horas
-              </p>
-            </Grid>
-          </Grid>
+          <Outlet />
         </Grid>
       </Grid>
     </div>

@@ -1,7 +1,8 @@
 .verticalNavBar{
     background: rgb(80,130,175);
-    background: linear-gradient(180deg, rgba(80,130,175,1) 0%, rgba(51,86,117,1) 25%);
-    height: 1000px;
+    background: linear-gradient(180deg, rgba(80,130,175,1) 0%, rgba(51,86,117,1) 23%);
+    min-height: 100vh;
+    height: auto;
     width: 317px;
 }
 
@@ -13,9 +14,13 @@
 
 .topBar{
     height: 60px;
+    width: 100%;
     background-color: white;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .fundo{
@@ -26,29 +31,29 @@
 }
 
 .peixaria{
-    height: 200px;
-    width: 250px;
+    height: 200pt;
+    width: 23%;
     background-color: #5eb6a0;
     border-radius: 10px;
 }
 
 .talho{
-    height: 200px;
-    width: 250px;
+    height: 200pt;
+    width: 23%;
     background-color: #f8d36d;
     border-radius: 10px;
 }
 
 .frescos{
-    height: 200px;
-    width: 250px;
+    height: 200pt;
+    width: 23%;
     background-color: #d0d2d1;
     border-radius: 10px;
 }
 
 .padariaPastelaria{
-    height: 200px;
-    width: 250px;
+    height: 200pt;
+    width: 23%;
     background-color: #335675;
     border-radius: 10px;
 }
@@ -128,10 +133,9 @@ li {
 }
 
 .search {
-    height: 35px;
-    width: 500px;
+    height: 50%;
+    width: 30%;
     
-    margin-top: 12px;
     margin-left: 15px;
     border-radius: 50px;
     background-color: #f2f3f8;
@@ -143,15 +147,6 @@ li {
    outline: none;
 }
 
-.searchBtn {
-    background-color: #335675;
-    height: 37px;
-    margin-left: -65px;
-    border-radius: 50px;
-    border-style: none;
-    color: white;
-    padding: 0px 25px;
-}
 
 .isafety{
     display: block;
@@ -159,17 +154,5 @@ li {
 
 }
 
-.PesquisarIcon{
-    height: 15px;
-    width: auto;
-}
 
-.filterBtn{
-    height: 37px;
-    width: 37px;
-    margin-left: 10px;
-    border-radius: 50px;
-    background-color: #f2f3f8;
-    border-style: none;
-}
 

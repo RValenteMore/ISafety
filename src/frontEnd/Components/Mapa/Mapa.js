@@ -5,7 +5,8 @@ import {
   TileLayer,
   Marker,
   Popup,
-  Polygon
+  SVGOverlay,
+  GeoJSON,
 } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import { Link } from "react-router-dom";
@@ -18,6 +19,15 @@ import markerVerde from "../../Assets/Icons/Markers/markerVerde.png";
 import markerAmarelo from "../../Assets/Icons/Markers/markerAmarelo.png";
 import markerVermelho from "../../Assets/Icons/Markers/markerVermelho.png";
 import markerUnavailable from "../../Assets/Icons/Markers/markerUnavailable.png";
+
+import distritos from "../../Assets/CoordenadasDistritos/coordendas.json"
+
+
+//limites da layer azul clara
+const bounds = [
+  [58.39, -72.39],
+  [15.81, 47.15],
+];
 
 
 
@@ -66,9 +76,17 @@ function Mapa() {
         url="https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png"
       />
 
+      <SVGOverlay bounds={bounds}>
+        <rect x="0" y="0" width="100%" height="100%" fill="lightblue" />
+      </SVGOverlay>
+
+      <GeoJSON
+        data={distritos.features}
+      />
+
       <MarkerClusterGroup
         iconCreateFunction={createClusterCustomIcon}
-        disableClusteringAtZoom={13}
+        disableClusteringAtZoom={15}
         maxClusterRadius={100}
         animateAddingMarkers={true}
         showCoverageOnHover={false}
