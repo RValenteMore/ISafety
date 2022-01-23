@@ -154,5 +154,11 @@ li {
 
 }
 
+.antibug{
+    background-color: pink;
+    min-height: 100vh;
+    width: calc(100% - 317px);
+}
+
 
 

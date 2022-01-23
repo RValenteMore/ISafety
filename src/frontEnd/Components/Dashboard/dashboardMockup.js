@@ -97,14 +97,15 @@ function DashboardMockup() {
         </Grid>
 
         {/**Container da Diteita */}
-        <Grid item direction="row" md={10} className="rightContainer">
-          {/*Barra do Topo*/}
+        <div className="antibug">
+          <Grid item direction="row" md={12} className="rightContainer">
+            {/*Barra do Topo*/}
             <div className="topBar">
               <input className="search" />
 
               <Button
                 color="success"
-                style={{ marginLeft: -64, borderRadius: 50, height: "53%"}}
+                style={{ marginLeft: -64, borderRadius: 50, height: "53%" }}
               >
                 <img
                   className="PesquisarIcon"
@@ -117,7 +118,16 @@ function DashboardMockup() {
                 <img src={FilterIcon} alt="Filtro" />
               </Button>
 
-              <div style={{backgroungColor: "green", display: "flex", alignItems: "center", flexDirection: "row", position: "absolute", right: "100pt"}}>
+              <div
+                style={{
+                  backgroungColor: "green",
+                  display: "flex",
+                  alignItems: "center",
+                  flexDirection: "row",
+                  position: "absolute",
+                  right: "100pt",
+                }}
+              >
                 <Divider
                   orientation="vertical"
                   style={{ height: 35, width: 3 }}
@@ -128,10 +138,19 @@ function DashboardMockup() {
                 </Button>
 
                 <Button
-                  onClick={() => {setMail(0)}}
+                  onClick={() => {
+                    setMail(0);
+                  }}
                 >
                   <img src={MailIcon} alt="Correio" />
-                  <img src={MailDot} style={{margin: "-20pt 0 0 -3pt", height: "6pt", opacity: mail}}/>
+                  <img
+                    src={MailDot}
+                    style={{
+                      margin: "-20pt 0 0 -3pt",
+                      height: "6pt",
+                      opacity: mail,
+                    }}
+                  />
                 </Button>
 
                 <Divider
@@ -154,9 +173,10 @@ function DashboardMockup() {
               </div>
             </div>
 
-          {/**Conteúdo*/}
-          <Outlet />
-        </Grid>
+            {/**Conteúdo*/}
+            <Outlet />
+          </Grid>
+        </div>
       </Grid>
     </div>
   );
