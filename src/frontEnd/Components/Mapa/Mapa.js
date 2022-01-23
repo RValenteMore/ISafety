@@ -20,16 +20,7 @@ import markerAmarelo from "../../Assets/Icons/Markers/markerAmarelo.png";
 import markerVermelho from "../../Assets/Icons/Markers/markerVermelho.png";
 import markerUnavailable from "../../Assets/Icons/Markers/markerUnavailable.png";
 
-import distritos from "../../Assets/CoordenadasDistritos/coordendas.json"
-
-
-//limites da layer azul clara
-const bounds = [
-  [58.39, -72.39],
-  [15.81, 47.15],
-];
-
-
+import distritos from "../../Assets/CoordenadasDistritos/coordendas.json";
 
 function getIcon(risco, disponibilidade) {
   let marker;
@@ -54,6 +45,20 @@ const createClusterCustomIcon = function (cluster) {
   });
 };
 
+const colors = ["white", "yellow", "orange", "red"];
+
+const MapStyle = {
+  fillOpacity: 1,
+  color: "black",
+};
+
+const paraCadaUm = (distrito, layer) => {
+  const NomeDistrito = distrito.nome;
+  console.log(NomeDistrito);
+  layer.bindPopup(NomeDistrito);
+  layer.options.fillColor = colors[Math.floor(Math.random() * 4)];
+};
+
 function Mapa() {
   const [lojas, setLojas] = useState([]);
   useEffect(() => {
@@ -69,19 +74,16 @@ function Mapa() {
       scrollWheelZoom={true}
       minZoom={7}
       doubleClickZoom={false}
-      style={{ borderRadius: 5 }}
+      className="mapa"
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png"
+        attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+        url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
       />
-
-      <SVGOverlay bounds={bounds}>
-        <rect x="0" y="0" width="100%" height="100%" fill="lightblue" />
-      </SVGOverlay>
-
       <GeoJSON
         data={distritos.features}
+        style={MapStyle}
+        onEachFeature={paraCadaUm}
       />
 
       <MarkerClusterGroup
