@@ -59,7 +59,7 @@
 }
 
 .seccoes{
-    margin-top: 25px;
+    margin-top: 200px;
     justify-content: space-between;
 }
 
@@ -158,6 +158,13 @@ li {
     background-color: #f2f3f8;
     min-height: 100vh;
     width: calc(100% - 317px);
+}
+
+.imgCartoes{
+    margin-top: -40pt;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
