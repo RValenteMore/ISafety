@@ -45,8 +45,6 @@ const createClusterCustomIcon = function (cluster) {
   });
 };
 
-const colors = ["white", "yellow", "orange", "red"];
-
 const MapStyle = {
   fillOpacity: 1,
   color: "black",
@@ -56,7 +54,8 @@ const paraCadaUm = (distrito, layer) => {
   const NomeDistrito = distrito.nome;
   console.log(NomeDistrito);
   layer.bindPopup(NomeDistrito);
-  layer.options.fillColor = colors[Math.floor(Math.random() * 4)];
+  layer.options.fillColor = "#e0d499";
+  layer.options.fillOpacity = 0.6;
 };
 
 function Mapa() {
