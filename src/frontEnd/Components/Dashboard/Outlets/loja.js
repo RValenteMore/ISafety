@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import api from '../../Services/api';
+import api from '../../../Services/api';
 
 function Loja() {
     const [loja, setLoja] = useState({});

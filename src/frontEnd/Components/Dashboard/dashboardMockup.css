@@ -155,7 +155,7 @@ li {
 }
 
 .antibug{
-    background-color: pink;
+    background-color: #f2f3f8;
     min-height: 100vh;
     width: calc(100% - 317px);
 }
