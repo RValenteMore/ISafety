@@ -7,7 +7,7 @@ import BomDia from "./frontEnd/Components/Dashboard/Outlets/bomdia"
 import Entrepostos from "./frontEnd/Components/Dashboard/Outlets/entrepostos"
 import Historico from "./frontEnd/Components/Dashboard/Outlets/historico"
 import Definicoes from "./frontEnd/Components/Dashboard/Outlets/definicoes"
-import Login from "./frontEnd/Components/Dashboard/Outlets/loja";
+import Login from "./frontEnd/Components/Login/login";
 
 import Loja from "./frontEnd/Components/Dashboard/Outlets/loja";
 import ExcelToJson from "./backEnd/components/ExcelToJSON";
@@ -17,18 +17,19 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<DashboardMockup />}>
-          <Route path="/" element={<Todas/>}/>
-          <Route path="/continentes" element={<Continentes/>}/>
-          <Route path="/bomdia" element={<BomDia/>}/>
-          <Route path="/entrepostos" element={<Entrepostos/>}/>
-          <Route path="/historico" element={<Historico/>}/>
-          <Route path="/definicoes" element={<Definicoes/>}/>
-          <Route path="/loja/:id" element={<Loja/>}/>
+        <Route path="/" element={<Login/>}/>
+        <Route path="/dashboard/" element={<DashboardMockup />}>
+          <Route path="/dashboard/" element={<Todas/>}/>
+          <Route path="/dashboard/continentes" element={<Continentes/>}/>
+          <Route path="/dashboard/bomdia" element={<BomDia/>}/>
+          <Route path="/dashboard/entrepostos" element={<Entrepostos/>}/>
+          <Route path="/dashboard/historico" element={<Historico/>}/>
+          <Route path="/dashboard/definicoes" element={<Definicoes/>}/>
+          <Route path="/dashboard/loja/:id" element={<Loja/>}/>
         </Route>
         <Route path="/antigo" element={<DashBoard />}/>
         <Route path="/ExelToJson" element={<ExcelToJson/>}/>
-        <Route path="/login" element={<Login/>}/>
+        
       </Routes>
     </BrowserRouter>
   );

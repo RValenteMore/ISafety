@@ -81,22 +81,21 @@ router.get('/loja',  async (request, response) => {
 
 //este get retorna apenas uma loja
 router.get('/loja/:id',  async (req, res) => {
-    const id = req.params._id
-    
-    try {
-        const getloja = await lojaDataCopy.findOne({"req.params.lojaDataCopy_id": id })
+  const id = req.params.id
+  
+  try {
+      const getloja = await lojaDataCopy.findOne({_id: id })
 
-        if (!getloja) {
-            res.status(422).json({ message: 'Loja não encontrada!' })
-            return
-          }
-        
-        res.status(200).json(getloja)
-      } catch (error) {
-        res.status(500).json({ erro: error })
-      }
-    })
-
+      if (!getloja) {
+          res.status(422).json({ message: 'Loja não encontrada!' })
+          return
+        }
+      
+      res.status(200).json(getloja)
+    } catch (error) {
+      res.status(500).json({ erro: error })
+    }
+  })
 
 //este patch atualiza apenas uma loja
 router.patch('/loja/:id', async (req, res) => {

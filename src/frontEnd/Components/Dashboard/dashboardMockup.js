@@ -8,8 +8,9 @@ import SearchIcon from "../../Assets/DashBoard/SearchIcon.png";
 import FilterIcon from "../../Assets/DashBoard/FilterIcon.png";
 import NotificationIcon from "../../Assets/DashBoard/NotifcationIcon.png";
 import MailIcon from "../../Assets/DashBoard/MailIcon.png";
-import AccountIcon from "../../Assets/DashBoard/AccountIcon.png";
 import MailDot from "../../Assets/DashBoard/MailDot.png";
+
+import BasicMenu from "./Outlets/MenuProfile/menu";
 
 const useStyles = makeStyles((theme) => ({
   Root: {
@@ -33,7 +34,7 @@ function DashboardMockup() {
                   if (isActive) return "selecionado";
                   else return "nSelecionado";
                 }}
-                to="/"
+                to="/dashboard/"
               >
                 Sonae - Todas
               </NavLink>
@@ -44,7 +45,7 @@ function DashboardMockup() {
                   if (isActive) return "selecionado";
                   else return "nSelecionado";
                 }}
-                to="/continentes"
+                to="/dashboard/continentes"
               >
                 Sonae - Continente
               </NavLink>
@@ -55,7 +56,7 @@ function DashboardMockup() {
                   if (isActive) return "selecionado";
                   else return "nSelecionado";
                 }}
-                to="/bomdia"
+                to="/dashboard/bomdia"
               >
                 Sonae - Bom Dia
               </NavLink>
@@ -66,7 +67,7 @@ function DashboardMockup() {
                   if (isActive) return "selecionado";
                   else return "nSelecionado";
                 }}
-                to="/entrepostos"
+                to="/dashboard/entrepostos"
               >
                 Sonae - Entrepostos
               </NavLink>
@@ -77,7 +78,7 @@ function DashboardMockup() {
                   if (isActive) return "selecionado";
                   else return "nSelecionado";
                 }}
-                to="/historico"
+                to="/dashboard/historico"
               >
                 Histórico
               </NavLink>
@@ -88,7 +89,7 @@ function DashboardMockup() {
                   if (isActive) return "selecionado";
                   else return "nSelecionado";
                 }}
-                to="/definicoes"
+                to="/dashboard/definicoes"
               >
                 Definições
               </NavLink>
@@ -160,16 +161,11 @@ function DashboardMockup() {
 
                 <Button
                   style={{ height: "90%" }}
-                  onClick={() => {
-                    navigate("bomdia");
-                  }}
                 >
-                  <img
-                    src={AccountIcon}
-                    alt="Perfil"
-                    style={{ height: "35pt" }}
-                  />
+                  
                 </Button>
+
+                <BasicMenu/>
               </div>
             </div>
 

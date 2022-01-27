@@ -28,7 +28,7 @@ function Login() {
             }, 2000);
             return false; 
         } else {
-            navigate('antigo');
+            navigate('/dashboard/');
             return true;
           }      
     }
@@ -54,7 +54,7 @@ function Login() {
                                 setPassword(event.target.value)
                             }}
                         />
-                        <button onClick={() => navigate('/')}>
+                        <button onClick={() => {verifyUser()}}>
                             Login
                         </button>
                         <a style={{

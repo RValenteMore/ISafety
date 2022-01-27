@@ -10,9 +10,12 @@ import PadariaPastelaria from "../../../Assets/DashBoard/padaria_pastelaria.png"
 
 function Loja() {
   const [loja, setLoja] = useState({});
+  const [loading, setLoanding] = useState(0)
   const { id } = useParams();
-  api.get(`/loja/:${id}`).then((loja) => {
+  let rotaAPI = "loja/" + id.toString().substring(1);
+  api.get(rotaAPI).then((loja) => {
     setLoja(loja.data);
+    console.log(loja);
   });
   return (
     <div>

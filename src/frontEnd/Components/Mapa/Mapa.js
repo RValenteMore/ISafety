@@ -52,7 +52,6 @@ const MapStyle = {
 
 const paraCadaUm = (distrito, layer) => {
   const NomeDistrito = distrito.nome;
-  console.log(NomeDistrito);
   layer.bindPopup(NomeDistrito);
   layer.options.fillColor = "#e0d499";
   layer.options.fillOpacity = 0.6;
