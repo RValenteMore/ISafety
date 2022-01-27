@@ -1,4 +1,3 @@
-import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Mapa from "../../Mapa/Mapa";
 import { Grid, Paper } from "@material-ui/core";

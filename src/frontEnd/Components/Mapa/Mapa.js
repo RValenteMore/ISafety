@@ -9,7 +9,7 @@ import {
   GeoJSON,
 } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import "./Mapa.css";
 import icon from "../../Assets/CentrarLogo/icon.png";
@@ -59,8 +59,18 @@ const paraCadaUm = (distrito, layer) => {
 
 function Mapa() {
   const [lojas, setLojas] = useState([]);
+  const location = useLocation();
+  let rotaApi = "";
+
   useEffect(() => {
-    api.get("loja").then((data) => {
+    if (location.pathname === "/dashboard/")
+      rotaApi = "loja";
+    else if (location.pathname === "/dashboard/continentes")
+      rotaApi = "loja/id/Continente";
+    else if (location.pathname === "/dashboard/bomdia")
+      rotaApi = "loja/id/ContinenteBomDia"
+    console.log(location.pathname);
+    api.get(rotaApi).then((data) => {
       setLojas(data.data);
     });
   }, []);
