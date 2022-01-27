@@ -1,18 +1,33 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import { Button, Menu, MenuItem } from "@material-ui/core";
 import AccountIcon from "../../../../Assets/DashBoard/AccountIcon.png";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../../../Providers/auth";
 
 export default function BasicMenu() {
   const navigate = useNavigate();
+  const {user, setUser} = useAuth();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+  const open = Boolean(anchorEl);  
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  
+  const handleLogOut = () => {
+    localStorage.removeItem("user");
+    setUser(undefined);
+    navigate("/");
+  }
+  useEffect(() => {
+    const userStorage = localStorage.getItem("user");
+    if (userStorage === null)
+      navigate("/");
+  }, []);
 
   return (
     <div>
@@ -35,7 +50,7 @@ export default function BasicMenu() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={() => {handleClose(); navigate("/")}}>Logout</MenuItem>
+        <MenuItem onClick={() => {handleClose(); handleLogOut()}}>Logout ({user})</MenuItem>
       </Menu>
     </div>
   );

@@ -113,7 +113,7 @@ function Mapa() {
                 <br />
                 Nivel de Risco: {continente.Nivel_risco}
               </p>
-              <Link to={`/Loja/:${continente._id}`}>Ver Mais</Link>
+              <Link to={`/dashboard/loja/:${continente._id}`}>Ver Mais</Link>
             </Popup>
           </Marker>
         ))}

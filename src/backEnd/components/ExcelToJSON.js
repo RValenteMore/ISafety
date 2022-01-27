@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import * as XLSX from "xlsx";
 import axios from 'axios';
 //import {getLoja, createLoja} from '../services/LojaService'

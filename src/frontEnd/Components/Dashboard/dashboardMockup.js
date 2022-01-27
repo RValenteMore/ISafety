@@ -11,6 +11,7 @@ import MailIcon from "../../Assets/DashBoard/MailIcon.png";
 import MailDot from "../../Assets/DashBoard/MailDot.png";
 
 import BasicMenu from "./Outlets/MenuProfile/menu";
+import { useAuth } from "../../Providers/auth";
 
 const useStyles = makeStyles((theme) => ({
   Root: {
@@ -20,12 +21,11 @@ const useStyles = makeStyles((theme) => ({
 
 function DashboardMockup() {
   const [mail, setMail] = useState(1);
-  const navigate = useNavigate();
   const classes = useStyles();
   return (
     <div>
       <Grid container className={classes.Root}>
-        <Grid item direction="column" className="verticalNavBar">
+        <Grid item className="verticalNavBar">
           <img className="isafety" src={ISafetyLogo} alt="Logo ISafety" />
           <ul>
             <li>
@@ -99,13 +99,12 @@ function DashboardMockup() {
 
         {/**Container da Diteita */}
         <div className="antibug">
-          <Grid item direction="row" md={12} className="rightContainer">
+          <Grid item md={12} className="rightContainer">
             {/*Barra do Topo*/}
             <div className="topBar">
               <input className="search" />
 
               <Button
-                color="success"
                 style={{ marginLeft: -64, borderRadius: 50, height: "53%" }}
               >
                 <img

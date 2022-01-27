@@ -4,6 +4,7 @@ import { Grid, Paper } from "@material-ui/core";
 import { userList } from '../../Assets/users.js';
 import { useNavigate } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
+import { useAuth } from '../../Providers/auth';
 
 
  
@@ -14,9 +15,10 @@ function Login() {
     const [erro, setErro] = useState(0);
     const navigate = useNavigate();
 
+    const {setUser} = useAuth();
 
-    function verifyUser(){        
-        console.log(userList);
+
+    function verifyUser(){
         const currentUser = userList.find(
             (x) =>
               x.username === username && x.password === password
@@ -28,6 +30,8 @@ function Login() {
             }, 2000);
             return false; 
         } else {
+            localStorage.setItem("user", JSON.stringify(username));
+            setUser(username);
             navigate('/dashboard/');
             return true;
           }      

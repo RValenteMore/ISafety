@@ -4,4 +4,9 @@ export const userList = [
     "username": "admin",
     "password": "admin"
   },
+  {
+    "id": 1,
+    "username": "ricardo",
+    "password": "ricardo"
+  }
 ];
