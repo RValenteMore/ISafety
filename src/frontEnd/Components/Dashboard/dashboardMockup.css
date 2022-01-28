@@ -167,5 +167,12 @@ li {
     margin-right: auto;
 }
 
+h4{
+    color: #446480;
+}
 
-
+.graficos{
+    height: 100%;
+    width: 100%;
+    padding: 1pt 15pt;
+}

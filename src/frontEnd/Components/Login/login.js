@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./login.css";
 import { Grid, Paper } from "@material-ui/core";
 import { userList } from '../../Assets/users.js';
@@ -36,6 +36,12 @@ function Login() {
             return true;
           }      
     }
+
+    useEffect(() => {
+        const userStorage = localStorage.getItem("user");
+        if (userStorage !== null)
+          navigate("/dashboard/");
+      }, []);
     return (
         <div>
             <Grid container>

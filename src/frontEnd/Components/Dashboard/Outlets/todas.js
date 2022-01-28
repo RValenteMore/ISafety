@@ -1,6 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 import Mapa from "../../Mapa/Mapa";
 import { Grid, Paper } from "@material-ui/core";
+import Grafico from "../../Grafico/Grafico";
 
 const useStyles = makeStyles((theme) => ({
   Mapa: {
@@ -41,8 +42,18 @@ function Todas() {
         </Grid>
 
         <Grid item md={8}>
-          <Paper className={classes.TaxaIncidenciaGeral}></Paper>
-          <Paper className={classes.NivelRiscoGeral}></Paper>
+          <Paper className={classes.TaxaIncidenciaGeral}>
+            <div className="graficos">
+              <h4>Taxa de Incidência Geral</h4>
+              <Grafico/>
+            </div>
+          </Paper>
+          <Paper className={classes.NivelRiscoGeral}>
+            <div className="graficos">
+              <h4>Nivel de Risco Geral</h4>
+              <Grafico/>
+            </div>
+          </Paper>
         </Grid>
       </Grid>
     </div>

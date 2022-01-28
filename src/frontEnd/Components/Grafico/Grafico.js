@@ -57,10 +57,10 @@ const data = [
 
 export default function App() {
   return (
-    <ResponsiveContainer height="50%" width="100%" aspect={3} style = {{backgroud: "white"}}>
+    <ResponsiveContainer width="90%" height="75%" style = {{backgroud: "white"}}>
       <LineChart
         width={500}
-        height={300}
+        height={100}
         data={data}
         margin={{
           top: 5,
