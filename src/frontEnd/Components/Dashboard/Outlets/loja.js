@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import api from "../../../Services/api";
 import { Grid } from "@material-ui/core";
@@ -10,7 +10,6 @@ import PadariaPastelaria from "../../../Assets/DashBoard/padaria_pastelaria.png"
 
 function Loja() {
   const [loja, setLoja] = useState({});
-  const [loading, setLoanding] = useState(0)
   const { id } = useParams();
   let rotaAPI = "loja/" + id.toString().substring(1);
   api.get(rotaAPI).then((loja) => {
@@ -38,7 +37,7 @@ function Loja() {
       {/**Secções coloridas*/}
       <Grid container md={12} className="seccoes">
         <Grid item className="peixaria">
-          <img className="imgCartoes" src={Peixaria} />
+          <img className="imgCartoes" src={Peixaria} alt=""/>
           <h3 className="textoCartoes">Peixaria</h3>
           <p className="textoCartoes">Nivel de risco nas últimas horas</p>
           <h1 style={{ fontSize: 60, marginTop: 0 }} className="textoCartoes">
@@ -46,7 +45,7 @@ function Loja() {
           </h1>
         </Grid>
         <Grid item className="talho">
-          <img className="imgCartoes" src={Talho} />
+          <img className="imgCartoes" src={Talho} alt=""/>
           <h3 className="textoCartoes">Talho</h3>
           <p className="textoCartoes">Nivel de risco nas últimas horas</p>
           <h1 style={{ fontSize: 60, marginTop: 0 }} className="textoCartoes">
@@ -54,7 +53,7 @@ function Loja() {
           </h1>
         </Grid>
         <Grid item className="frescos">
-          <img className="imgCartoes" src={Fescos} />
+          <img className="imgCartoes" src={Fescos} alt=""/>
           <h3 className="textoCartoes">Frescos</h3>
           <p className="textoCartoes">Nivel de risco nas últimas horas</p>
           <h1 style={{ fontSize: 60, marginTop: 0 }} className="textoCartoes">
@@ -62,7 +61,7 @@ function Loja() {
           </h1>
         </Grid>
         <Grid item className="padariaPastelaria">
-          <img className="imgCartoes" src={PadariaPastelaria} />
+          <img className="imgCartoes" src={PadariaPastelaria} alt=""/>
           <h3 className="textoCartoes" style={{ color: "white" }}>
             Padaria e Pastelaria
           </h3>

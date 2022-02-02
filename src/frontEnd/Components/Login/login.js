@@ -3,7 +3,6 @@ import "./login.css";
 import { Grid, Paper } from "@material-ui/core";
 import { userList } from '../../Assets/users.js';
 import { useNavigate } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
 import { useAuth } from '../../Providers/auth';
 
 
@@ -67,14 +66,14 @@ function Login() {
                         <button onClick={() => {verifyUser()}}>
                             Login
                         </button>
-                        <a style={{
+                        <p style={{
                             color: "red",
                             opacity: erro,
                             marginBottom: 10,              
                         }}>
                             <br/>
                             Username ou password incorretos!
-                        </a>                  
+                        </p>                  
                     </Paper>
                 </Grid>
             </Grid>

@@ -5,14 +5,12 @@ import {
   TileLayer,
   Marker,
   Popup,
-  SVGOverlay,
   GeoJSON,
 } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import { Link, useLocation } from "react-router-dom";
 
 import "./Mapa.css";
-import icon from "../../Assets/CentrarLogo/icon.png";
 import api from "../../Services/api";
 
 import markerVerde from "../../Assets/Icons/Markers/markerVerde.png";
@@ -45,16 +43,18 @@ const createClusterCustomIcon = function (cluster) {
   });
 };
 
-const MapStyle = {
-  fillOpacity: 1,
-  color: "black",
-};
-
 const paraCadaUm = (distrito, layer) => {
   const NomeDistrito = distrito.nome;
-  layer.bindPopup(NomeDistrito);
-  layer.options.fillColor = "#e0d499";
-  layer.options.fillOpacity = 0.6;
+  layer.bindPopup(NomeDistrito); // Cria o popup quando se clica no distrito
+  layer.options.fillColor = "#e0d499"; // Muda a cor dos distritos
+  layer.options.fillOpacity = 0.6; // Opacidade
+  layer.options.weight = 2; // Espessura da linha dos distritos
+  layer.options.color = "black";
+  
+  
+  //Tracejado caso seja preciso
+
+  // layer.options.dashArray = '3';
 };
 
 function Mapa() {
@@ -63,6 +63,7 @@ function Mapa() {
   let rotaApi = "";
 
   useEffect(() => {
+    //Atribuicao do endpoint para filtrar as lojas
     if (location.pathname === "/dashboard/")
       rotaApi = "loja";
     else if (location.pathname === "/dashboard/continentes")
@@ -84,13 +85,15 @@ function Mapa() {
       doubleClickZoom={false}
       className="mapa"
     >
+      //Layer do mapa
       <TileLayer
         attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
         url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
       />
+
+       //Mapa de Portugal
       <GeoJSON
         data={distritos.features}
-        style={MapStyle}
         onEachFeature={paraCadaUm}
       />
 

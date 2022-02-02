@@ -35,13 +35,13 @@ function Todas() {
     <div>
       <Grid container>
         {/**Mapa */}
-        <Grid item md={4}>
+        <Grid item sm={12} md={4}>
           <Paper className={classes.Mapa}>
             <Mapa style={{ marginTop: -60 }} />
           </Paper>
         </Grid>
 
-        <Grid item md={8}>
+        <Grid item sm={12} md={8}>
           <Paper className={classes.TaxaIncidenciaGeral}>
             <div className="graficos">
               <h4>Taxa de Incidência Geral</h4>

@@ -1,6 +1,5 @@
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import DashBoard from "./frontEnd/Components/Dashboard/dashboard";
 import Todas from "./frontEnd/Components/Dashboard/Outlets/todas"
 import Continentes from "./frontEnd/Components/Dashboard/Outlets/continentes"
 import BomDia from "./frontEnd/Components/Dashboard/Outlets/bomdia"
@@ -27,7 +26,6 @@ export default function App() {
           <Route path="/dashboard/definicoes" element={<Definicoes/>}/>
           <Route path="/dashboard/loja/:id" element={<Loja/>}/>
         </Route>
-        <Route path="/antigo" element={<DashBoard />}/>
         <Route path="/ExelToJson" element={<ExcelToJson/>}/>
         
       </Routes>

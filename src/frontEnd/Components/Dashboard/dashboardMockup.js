@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Divider, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import "./dashboardMockup.css";
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import ISafetyLogo from "../../Assets/ISafetyLogo/logo.png";
 import SearchIcon from "../../Assets/DashBoard/SearchIcon.png";
 import FilterIcon from "../../Assets/DashBoard/FilterIcon.png";
@@ -11,7 +11,6 @@ import MailIcon from "../../Assets/DashBoard/MailIcon.png";
 import MailDot from "../../Assets/DashBoard/MailDot.png";
 
 import BasicMenu from "./Outlets/MenuProfile/menu";
-import { useAuth } from "../../Providers/auth";
 
 const useStyles = makeStyles((theme) => ({
   Root: {
@@ -144,6 +143,7 @@ function DashboardMockup() {
                 >
                   <img src={MailIcon} alt="Correio" />
                   <img
+                    alt=""
                     src={MailDot}
                     style={{
                       margin: "-20pt 0 0 -3pt",
