@@ -48,8 +48,8 @@ const paraCadaUm = (distrito, layer) => {
   layer.bindPopup(NomeDistrito); // Cria o popup quando se clica no distrito
   layer.options.fillColor = "#e0d499"; // Muda a cor dos distritos
   layer.options.fillOpacity = 0.6; // Opacidade
-  layer.options.weight = 2; // Espessura da linha dos distritos
-  layer.options.color = "black";
+  layer.options.weight = 1; // Espessura da linha dos distritos
+  layer.options.color = "white";
   
   
   //Tracejado caso seja preciso

@@ -1,6 +1,6 @@
 .verticalNavBar{
     background: rgb(80,130,175);
-    background: linear-gradient(180deg, rgba(80,130,175,1) 0%, rgba(51,86,117,1) 23%);
+    background: linear-gradient(180deg, rgba(80,130,175,1) 0%, rgba(51,86,117,1) 35%);
     min-height: 100vh;
     height: auto;
     width: 317px;

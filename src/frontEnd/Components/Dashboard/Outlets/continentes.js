@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 10,
     marginRight: 10,
 
-    height: 630,
+    height: 800,
   },
 
   TaxaIncidenciaGeral: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 10,
     marginBottom: 20,
 
-    height: 305,
+    height: 390,
   },
 
   NivelRiscoGeral: {
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 10,
     marginLeft: 10,
 
-    height: 305,
+    height: 390,
   },
 }));
 
@@ -35,13 +35,13 @@ function Continentes() {
     <div>
       <Grid container>
         {/**Mapa */}
-        <Grid item md={4}>
+        <Grid item sm={12} md={5}>
           <Paper className={classes.Mapa}>
             <Mapa style={{ marginTop: -60 }} />
           </Paper>
         </Grid>
 
-        <Grid item md={8}>
+        <Grid item sm={12} md={7}>
           <Paper className={classes.TaxaIncidenciaGeral}>
             <div className="graficos">
               <h4>Taxa de Incidência Geral</h4>

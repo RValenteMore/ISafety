@@ -16,7 +16,5 @@
 
   .mapa{
     border-radius: 5;
-    background: rgb(155,183,209);
-    background: radial-gradient(circle, rgba(155,183,209,1) 21%, rgba(85,133,175,1) 100%);
     
   }
